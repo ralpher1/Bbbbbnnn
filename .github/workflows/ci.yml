@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, master]
+    types: [ready_for_review, synchronize]
+  push:
+    branches: [main, master]
+
+jobs:
+  ci:
+    if: github.event_name == 'push' || !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+      - name: Run Python Hello World
+        run: python hello_world.py
+      - name: Run Go Hello World
+        run: go run hello_world.go
