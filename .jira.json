@@ -1,0 +1,14 @@
+{
+  "projectKey": "BN",
+  "projectId": 11084,
+  "projectName": "Bbbbbnnn Hello World",
+  "boardId": 867,
+  "sprintId": 818,
+  "epicKey": "BN-1",
+  "storyKey": "BN-2",
+  "subtasks": {
+    "python": "BN-3",
+    "go": "BN-4",
+    "testing": "BN-5"
+  }
+}
